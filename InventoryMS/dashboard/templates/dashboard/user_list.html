@@ -1,0 +1,13 @@
+{% extends 'dashboard/base.html' %}
+{% block dashboardcontent %}
+
+    <h1>User List</h1>
+
+    {% for user in user_list %}
+        <div>
+            <span>{{ user.username }}</span>
+            <!-- Add other user information if needed -->
+        </div>
+    {% endfor %}
+
+{% endblock %}

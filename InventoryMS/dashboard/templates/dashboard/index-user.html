@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="user-list-card" style="max-width: 1200px; margin: auto;">
+        <table>
+            <tr>
+                <td><strong>First Name</strong></td>
+                <td>{{ f_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Last Name</strong></td>
+                <td>{{ l_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Email</strong></td>
+                <td>{{ email }}</td>
+            </tr>
+        </table>
+        <div class="mt-4">
+            <div class="text-center p-3">
+                <h2 class="theme-color">User Dashboard</h2>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-sm">
+                    <button class="btn btn-block action-btn p-3"
+                            onclick="location.href='{% url 'dashboard:search_available_products' %}'">
+                        <i class="fa-solid fa-user" style="color: #ffffff;"></i> Search Products
+                    </button>
+                </div>
+
+                <div class="col-sm">
+                    <button class="btn btn-block action-btn p-3"
+                            onclick="location.href='{% url 'dashboard:shop_products' %}'">
+                        <i class="fas fa-boxes pr-3"></i> Shop
+                    </button>
+                </div>
+                <div class="col-sm">
+                    <button class="btn btn-block action-btn p-3"
+                            onclick="location.href='{% url 'dashboard:view_sold_products' %}'">
+                        <i class="fas fa-boxes pr-3"></i> Recently Sold
+                    </button>
+                </div>
+                <div class="col-sm">
+                    <button class="btn btn-block action-btn p-3"
+                            onclick="location.href='{% url 'dashboard:user_profile' %}'">
+                        <i class="fas fa-boxes pr-3"></i> Profiles
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

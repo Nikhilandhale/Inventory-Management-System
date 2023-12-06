@@ -1,0 +1,36 @@
+{% extends 'dashboard/base.html' %}
+{% block dashboardcontent %}
+
+
+    <div class="user-list-card">
+        <table>
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>
+                        <form method="POST" action="{% url 'dashboard:delete_user' user.id %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" onclick="confirmAndSubmit()" class="btn btn-danger btn-sm">Remove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function confirmAndSubmit() {
+            if (confirm('Are you sure you want to remove this user?')) {
+                document.getElementById('removeUserForm').submit();
+            }
+        }
+    </script>
+{% endblock %}

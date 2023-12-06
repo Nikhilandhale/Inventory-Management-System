@@ -1,0 +1,46 @@
+<!-- user_profile.html -->
+
+{% extends 'dashboard/base.html' %}
+{% block dashboardcontent %}
+    <style>
+
+        .user-profile-form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the form content horizontally */
+        }
+
+        .btn-primary {
+            margin-top: 10px; /* Add space between the table and the button */
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <div class="content-card mx-auto">
+        <form method="post" class="user-profile-form">
+            {% csrf_token %}
+            <table class="table user-profile-table">
+                <tbody>
+                <tr>
+                    <th scope="row">First Name</th>
+                    <td>{{ form.first_name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Last Name</th>
+                    <td>{{ form.last_name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Email</th>
+                    <td>{{ form.email }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+{% endblock %}

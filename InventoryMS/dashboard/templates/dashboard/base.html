@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+
+            <div class="col-9 mx-auto">
+
+                <div class="content-card mt-4" style="margin: 10px;padding: 5px">
+                    <div class="text-center p-1">
+                        <h3 class="theme-color center-heading pad-five">{{ title }}</h3>
+                    </div>
+                </div>
+
+                {% block dashboardcontent %}
+
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

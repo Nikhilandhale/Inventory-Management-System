@@ -1,0 +1,11 @@
+{% extends 'dashboard/base.html' %}
+{% block dashboardcontent %}
+    <div class="content-card mx-auto">
+        <p>Are you sure you want to delete the product "{{ product.product_name }}"?</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-sm">Delete Product</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'dashboard/base.html' %}
+{% block dashboardcontent %}
+    <div class="content-card mx-auto">
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="product_name">Product Name:</label>
+                <input type="text" id="product_name" name="product_name" value="{{ product.product_name }}">
+            </div>
+            <div>
+                <label for="product_price">Product Price:</label>
+                <input type="text" id="product_price" name="product_price" value="{{ product.product_price }}">
+            </div>
+            <div>
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" name="product_quantity" value="{{ product.product_quantity }}">
+            </div>
+            <button type="submit">Update Product</button>
+        </form>
+    </div>
+{% endblock %}
